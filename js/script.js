@@ -30,9 +30,8 @@ const pushRecipe = (recipe) => {
                     <img src="${recipe.image_url}" alt="Image pending...">
 
                     <div class="rec-info">
-                    <h3 class="rec-title">${recipe.title}</h2>
-                </div>
-    
+                        <h3 class="rec-title">${recipe.title}</h2>
+                    </div>
                 </div>`
 
     MAIN.innerHTML = content;
