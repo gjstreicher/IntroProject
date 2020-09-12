@@ -26,6 +26,18 @@ main {
     color: white;
 }
 
+.search {
+    width: 570px;
+
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+.search input {
+    width: 570 px;
+    margin: auto;
+}
+
 .content {
     overflow: auto;
 
@@ -87,7 +99,6 @@ footer {
 
     margin-right: 10px;
 
-    
     border-radius: 5px;
 }
 
