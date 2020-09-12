@@ -1,232 +1,298 @@
-let apiTestData = {
-    "results": [
+let apiTestData = JSON.parse(`{
+    "count": 28,
+    "recipes": [
         {
-            "id": 492564,
-            "title": "Falafel Burgers with Feta Cucumber Sauce",
-            "readyInMinutes": 50,
-            "servings": 6,
-            "sourceUrl": "https://www.cinnamonspiceandeverythingnice.com/falafel-burgers-with-feta-tzatziki-sauce/",
-            "openLicense": 0,
-            "image": "falafel-burgers-with-feta-tzatziki-sauce-492564.jpg"
+            "publisher": "101 Cookbooks",
+            "title": "Best Pizza Dough Ever",
+            "source_url": "http://www.101cookbooks.com/archives/001199.html",
+            "recipe_id": "47746",
+            "image_url": "http://forkify-api.herokuapp.com/images/best_pizza_dough_recipe1b20.jpg",
+            "social_rank": 100,
+            "publisher_url": "http://www.101cookbooks.com"
         },
         {
-            "id": 246916,
-            "title": "Bison Burger",
-            "readyInMinutes": 45,
-            "servings": 6,
-            "sourceUrl": "https://www.simplyrecipes.com/recipes/buffalo_burger/",
-            "openLicense": 0,
-            "image": "Buffalo-Burger-246916.jpg"
+            "publisher": "The Pioneer Woman",
+            "title": "Deep Dish Fruit Pizza",
+            "source_url": "http://thepioneerwoman.com/cooking/2012/01/fruit-pizza/",
+            "recipe_id": "46956",
+            "image_url": "http://forkify-api.herokuapp.com/images/fruitpizza9a19.jpg",
+            "social_rank": 100,
+            "publisher_url": "http://thepioneerwoman.com"
         },
         {
-            "id": 245166,
-            "title": "Hawaiian Pork Burger",
-            "readyInMinutes": 40,
-            "servings": 4,
-            "sourceUrl": "https://www.simplyrecipes.com/recipes/hawaiian_pork_burger/",
-            "openLicense": 0,
-            "image": "Hawaiian-Pork-Burger-245166.jpg"
+            "publisher": "Closet Cooking",
+            "title": "Pizza Dip",
+            "source_url": "http://www.closetcooking.com/2011/03/pizza-dip.html",
+            "recipe_id": "35477",
+            "image_url": "http://forkify-api.herokuapp.com/images/Pizza2BDip2B12B500c4c0a26c.jpg",
+            "social_rank": 99.99999999999994,
+            "publisher_url": "http://closetcooking.com"
         },
         {
-            "id": 607109,
-            "title": "Turkey Zucchini Burger with Garlic Mayo",
-            "readyInMinutes": 45,
-            "servings": 6,
-            "sourceUrl": "https://www.simplyrecipes.com/recipes/turkey_zucchini_burger_with_garlic_mayo/",
-            "openLicense": 0,
-            "image": "Turkey-Zucchini-Burger-with-Garlic-Mayo-607109.jpg"
+            "publisher": "Closet Cooking",
+            "title": "Cauliflower Pizza Crust (with BBQ Chicken Pizza)",
+            "source_url": "http://www.closetcooking.com/2013/02/cauliflower-pizza-crust-with-bbq.html",
+            "recipe_id": "41470",
+            "image_url": "http://forkify-api.herokuapp.com/images/BBQChickenPizzawithCauliflowerCrust5004699695624ce.jpg",
+            "social_rank": 99.9999999999994,
+            "publisher_url": "http://closetcooking.com"
         },
         {
-            "id": 864633,
-            "title": "Banh Mi Burgers with Spicy Sriracha Mayo",
-            "readyInMinutes": 35,
-            "servings": 4,
-            "sourceUrl": "http://littlespicejar.com/banh-mi-burgers-with-spicy-sriracha-mayo/",
-            "openLicense": 0,
-            "image": "banh-mi-burgers-with-spicy-sriracha-mayo-864633.jpg"
+            "publisher": "Closet Cooking",
+            "title": "Pizza Quesadillas (aka Pizzadillas)",
+            "source_url": "http://www.closetcooking.com/2012/11/pizza-quesadillas-aka-pizzadillas.html",
+            "recipe_id": "35478",
+            "image_url": "http://forkify-api.herokuapp.com/images/Pizza2BQuesadillas2B2528aka2BPizzadillas25292B5002B834037bf306b.jpg",
+            "social_rank": 99.99999999999835,
+            "publisher_url": "http://closetcooking.com"
         },
         {
-            "id": 219871,
-            "title": "Halloumi aubergine burgers with harissa relish",
-            "readyInMinutes": 20,
-            "servings": 4,
-            "sourceUrl": "https://www.bbcgoodfood.com/recipes/2196638/halloumi-aubergine-burgers-with-harissa-relish",
-            "openLicense": 0,
-            "image": "Halloumi-aubergine-burgers-with-harissa-relish-219871.jpg"
+            "publisher": "Two Peas and Their Pod",
+            "title": "Sweet Potato Kale Pizza with Rosemary & Red Onion",
+            "source_url": "http://www.twopeasandtheirpod.com/sweet-potato-kale-pizza-with-rosemary-red-onion/",
+            "recipe_id": "54454",
+            "image_url": "http://forkify-api.herokuapp.com/images/sweetpotatokalepizza2c6db.jpg",
+            "social_rank": 99.9999999991673,
+            "publisher_url": "http://www.twopeasandtheirpod.com"
         },
         {
-            "id": 246177,
-            "title": "Grilled Beef and Mushroom Burger",
-            "readyInMinutes": 30,
-            "servings": 3,
-            "sourceUrl": "https://www.simplyrecipes.com/recipes/grilled_beef_and_mushroom_burger/",
-            "openLicense": 0,
-            "image": "Grilled-Beef-and-Mushroom-Burger-246177.jpg"
+            "publisher": "My Baking Addiction",
+            "title": "Pizza Dip",
+            "source_url": "http://www.mybakingaddiction.com/pizza-dip/",
+            "recipe_id": "2ec050",
+            "image_url": "http://forkify-api.herokuapp.com/images/PizzaDip21of14f05.jpg",
+            "social_rank": 99.99999999826605,
+            "publisher_url": "http://www.mybakingaddiction.com"
         },
         {
-            "id": 245343,
-            "title": "Herbed Turkey Burger",
-            "readyInMinutes": 30,
-            "servings": 8,
-            "sourceUrl": "https://www.simplyrecipes.com/recipes/herbed_turkey_burger/",
-            "openLicense": 0,
-            "image": "Herbed-Turkey-Burger-245343.jpg"
+            "publisher": "The Pioneer Woman",
+            "title": "Pizza Potato Skins",
+            "source_url": "http://thepioneerwoman.com/cooking/2013/04/pizza-potato-skins/",
+            "recipe_id": "6fab1c",
+            "image_url": "http://forkify-api.herokuapp.com/images/pizza3464.jpg",
+            "social_rank": 99.99999999760887,
+            "publisher_url": "http://thepioneerwoman.com"
         },
         {
-            "id": 246593,
-            "title": "German Pork Burger",
-            "readyInMinutes": 25,
-            "servings": 4,
-            "sourceUrl": "https://www.simplyrecipes.com/recipes/german_pork_burger/",
-            "openLicense": 0,
-            "image": "German-Pork-Burger-246593.jpg"
+            "publisher": "Bon Appetit",
+            "title": "No-Knead Pizza Dough",
+            "source_url": "http://www.bonappetit.com/recipes/2012/03/no-knead-pizza-dough",
+            "recipe_id": "49346",
+            "image_url": "http://forkify-api.herokuapp.com/images/nokneadpizzadoughlahey6461467.jpg",
+            "social_rank": 99.99999999743466,
+            "publisher_url": "http://www.bonappetit.com"
         },
         {
-            "id": 245959,
-            "title": "Jamaican Jerk Burgers",
-            "readyInMinutes": 65,
-            "servings": 6,
-            "sourceUrl": "https://www.simplyrecipes.com/recipes/jamaican_jerk_burgers/",
-            "openLicense": 0,
-            "image": "jamaican-jerk-burgers-245959.jpg"
+            "publisher": "Simply Recipes",
+            "title": "Homemade Pizza",
+            "source_url": "http://www.simplyrecipes.com/recipes/homemade_pizza/",
+            "recipe_id": "36453",
+            "image_url": "http://forkify-api.herokuapp.com/images/pizza292x2007a259a79.jpg",
+            "social_rank": 99.99999998833789,
+            "publisher_url": "http://simplyrecipes.com"
         },
         {
-            "id": 516544,
-            "title": "Falafel Burgers with Creamy Feta Sauce",
-            "readyInMinutes": 60,
-            "servings": 4,
-            "sourceUrl": "https://pickyeaterblog.com/falafel-style-lentil-burgers-with-creamy-feta-sauce/",
-            "openLicense": 0,
-            "image": "falafel-style-lentil-burgers-with-creamy-feta-sauce-516544.jpg"
+            "publisher": "Closet Cooking",
+            "title": "Taco Quesadilla Pizzas",
+            "source_url": "http://www.closetcooking.com/2012/08/taco-quesadilla-pizza.html",
+            "recipe_id": "35626",
+            "image_url": "http://forkify-api.herokuapp.com/images/Taco2BQuesadilla2BPizza2B5002B4417a4755e35.jpg",
+            "social_rank": 99.99999998319973,
+            "publisher_url": "http://closetcooking.com"
         },
         {
-            "id": 521885,
-            "title": "Pesto & Mozzarella Turkey Burger",
-            "readyInMinutes": 20,
-            "servings": 6,
-            "sourceUrl": "http://cleananddelicious.com/2012/08/22/video-clean-eating-pesto-mozzarella-turkey-burger/",
-            "openLicense": 0,
-            "image": "Pesto---Mozzarella-Turkey-Burger-521885.jpg"
+            "publisher": "All Recipes",
+            "title": "Jay’s Signature Pizza Crust",
+            "source_url": "http://allrecipes.com/Recipe/Jays-Signature-Pizza-Crust/Detail.aspx",
+            "recipe_id": "17796",
+            "image_url": "http://forkify-api.herokuapp.com/images/237891b5e4.jpg",
+            "social_rank": 99.99999997246182,
+            "publisher_url": "http://allrecipes.com"
         },
         {
-            "id": 220182,
-            "title": "Turkey burgers with beetroot relish",
-            "readyInMinutes": 25,
-            "servings": 4,
-            "sourceUrl": "https://www.bbcgoodfood.com/recipes/10767/turkey-burgers-with-beetroot-relish",
-            "openLicense": 0,
-            "image": "Turkey-burgers-with-beetroot-relish-220182.jpg"
+            "publisher": "Closet Cooking",
+            "title": "Avocado Breakfast Pizza with Fried Egg",
+            "source_url": "http://www.closetcooking.com/2012/07/avocado-breakfast-pizza-with-fried-egg.html",
+            "recipe_id": "35097",
+            "image_url": "http://forkify-api.herokuapp.com/images/Avocado2Band2BFried2BEgg2BBreakfast2BPizza2B5002B296294dcea8a.jpg",
+            "social_rank": 99.99999990783806,
+            "publisher_url": "http://closetcooking.com"
         },
         {
-            "id": 245306,
-            "title": "Spicy Grilled Turkey Burger with Coleslaw",
-            "readyInMinutes": 45,
-            "servings": 4,
-            "sourceUrl": "https://www.simplyrecipes.com/recipes/spicy_grilled_turkey_burger_with_coleslaw/",
-            "openLicense": 0,
-            "image": "spicy-grilled-turkey-burger-with-coleslaw-245306.jpg"
+            "publisher": "The Pioneer Woman",
+            "title": "Pepperoni Pizza Burgers",
+            "source_url": "http://thepioneerwoman.com/cooking/2012/10/pepperoni-pizza-burgers/",
+            "recipe_id": "46895",
+            "image_url": "http://forkify-api.herokuapp.com/images/pizzaburgera5bd.jpg",
+            "social_rank": 99.99999990525365,
+            "publisher_url": "http://thepioneerwoman.com"
         },
         {
-            "id": 573337,
-            "title": "Spicy Mango Black Bean Turkey Burgers",
-            "readyInMinutes": 45,
-            "servings": 6,
-            "sourceUrl": "http://www.carascravings.com/2011/06/spicy-mango-black-bean-turkey-burgers.html",
-            "openLicense": 0,
-            "image": "Spicy-Mango-Black-Bean-Turkey-Burgers-573337.jpg"
+            "publisher": "Closet Cooking",
+            "title": "Thai Chicken Pizza with Sweet Chili Sauce",
+            "source_url": "http://www.closetcooking.com/2012/02/thai-chicken-pizza-with-sweet-chili.html",
+            "recipe_id": "35635",
+            "image_url": "http://forkify-api.herokuapp.com/images/Thai2BChicken2BPizza2Bwith2BSweet2BChili2BSauce2B5002B435581bcf578.jpg",
+            "social_rank": 99.99999990065892,
+            "publisher_url": "http://closetcooking.com"
         },
         {
-            "id": 210827,
-            "title": "Tangy tuna burgers",
-            "readyInMinutes": 25,
-            "servings": 2,
-            "sourceUrl": "https://www.bbcgoodfood.com/recipes/3212/tangy-tuna-burgers",
-            "openLicense": 0,
-            "image": "Tangy-tuna-burgers-210827.jpg"
+            "publisher": "The Pioneer Woman",
+            "title": "One Basic Pizza Crust",
+            "source_url": "http://thepioneerwoman.com/cooking/2011/09/steakhouse-pizza/",
+            "recipe_id": "47000",
+            "image_url": "http://forkify-api.herokuapp.com/images/steakhousepizza0b87.jpg",
+            "social_rank": 99.99999981149679,
+            "publisher_url": "http://thepioneerwoman.com"
         },
         {
-            "id": 211986,
-            "title": "Turkey & coriander burgers with guacamole",
-            "readyInMinutes": 30,
-            "servings": 4,
-            "sourceUrl": "https://www.bbcgoodfood.com/recipes/2364641/turkey-and-coriander-burgers-with-guacamole",
-            "openLicense": 0,
-            "image": "Turkey---coriander-burgers-with-guacamole-211986.jpg"
+            "publisher": "Two Peas and Their Pod",
+            "title": "Peach, Basil, Mozzarella, & Balsamic Pizza",
+            "source_url": "http://www.twopeasandtheirpod.com/peach-basil-mozzarella-balsamic-pizza/",
+            "recipe_id": "54491",
+            "image_url": "http://forkify-api.herokuapp.com/images/peachbasilpizza6c7de.jpg",
+            "social_rank": 99.99999980232263,
+            "publisher_url": "http://www.twopeasandtheirpod.com"
         },
         {
-            "id": 46139,
-            "title": "Turkey Burgers With Cucumber-Pineapple Relish",
-            "readyInMinutes": 45,
-            "servings": 6,
-            "sourceUrl": "http://www.wholefoodsmarket.com/recipes/1639",
-            "openLicense": 0,
-            "image": "turkey-burgers-with-cucumber-pineapple-relish-46139.jpg"
+            "publisher": "Real Simple",
+            "title": "English-Muffin Egg Pizzas",
+            "source_url": "http://www.realsimple.com/food-recipes/browse-all-recipes/english-muffin-egg-pizzas-10000000663044/index.html",
+            "recipe_id": "38812",
+            "image_url": "http://forkify-api.herokuapp.com/images/pizza_300d938bd58.jpg",
+            "social_rank": 99.99999978548222,
+            "publisher_url": "http://realsimple.com"
         },
         {
-            "id": 221403,
-            "title": "Lamb burgers with tzatziki",
-            "readyInMinutes": 40,
-            "servings": 4,
-            "sourceUrl": "https://www.bbcgoodfood.com/recipes/3145676/lamb-burgers-with-tzatziki",
-            "openLicense": 0,
-            "image": "Lamb-burgers-with-tzatziki-221403.jpg"
+            "publisher": "My Baking Addiction",
+            "title": "Simple No Knead Pizza Dough",
+            "source_url": "http://www.mybakingaddiction.com/no-knead-pizza-dough-recipe/",
+            "recipe_id": "dd21dd",
+            "image_url": "http://forkify-api.herokuapp.com/images/PizzaDough1of12edit5779.jpg",
+            "social_rank": 99.9999995838859,
+            "publisher_url": "http://www.mybakingaddiction.com"
         },
         {
-            "id": 610905,
-            "title": "Jalapeno Bacon Turkey Burger",
-            "readyInMinutes": 15,
-            "servings": 4,
-            "sourceUrl": "http://makobiscribe.com/jalapeno-bacon-turkey-burger-recipe/",
-            "openLicense": 0,
-            "image": "Jalapeno-Bacon-Turkey-Burger-610905.jpg"
+            "publisher": "The Pioneer Woman",
+            "title": "Grilled Veggie Pizza",
+            "source_url": "http://thepioneerwoman.com/cooking/2011/07/grilled-vegetable-pizza/",
+            "recipe_id": "47011",
+            "image_url": "http://forkify-api.herokuapp.com/images/grilledveggie79bd.jpg",
+            "social_rank": 99.99999947603048,
+            "publisher_url": "http://thepioneerwoman.com"
+        },
+        {
+            "publisher": "My Baking Addiction",
+            "title": "Spicy Chicken and Pepper Jack Pizza",
+            "source_url": "http://www.mybakingaddiction.com/spicy-chicken-and-pepper-jack-pizza-recipe/",
+            "recipe_id": "0fb8f4",
+            "image_url": "http://forkify-api.herokuapp.com/images/FlatBread21of1a180.jpg",
+            "social_rank": 99.99999927351223,
+            "publisher_url": "http://www.mybakingaddiction.com"
+        },
+        {
+            "publisher": "Simply Recipes",
+            "title": "How to Grill Pizza",
+            "source_url": "http://www.simplyrecipes.com/recipes/how_to_grill_pizza/",
+            "recipe_id": "36476",
+            "image_url": "http://forkify-api.herokuapp.com/images/howtogrillpizzad300x20086a60e1b.jpg",
+            "social_rank": 99.99999704095504,
+            "publisher_url": "http://simplyrecipes.com"
+        },
+        {
+            "publisher": "The Pioneer Woman",
+            "title": "PW’s Favorite Pizza",
+            "source_url": "http://thepioneerwoman.com/cooking/2010/02/my-favorite-pizza/",
+            "recipe_id": "47161",
+            "image_url": "http://forkify-api.herokuapp.com/images/4364270576_302751a2a4f3c1.jpg",
+            "social_rank": 99.99999689667648,
+            "publisher_url": "http://thepioneerwoman.com"
+        },
+        {
+            "publisher": "My Baking Addiction",
+            "title": "Barbecue Chicken Pizza",
+            "source_url": "http://www.mybakingaddiction.com/barbecue-chicken-pizza-recipe/",
+            "recipe_id": "a723e8",
+            "image_url": "http://forkify-api.herokuapp.com/images/BBQChickenPizza3e2b.jpg",
+            "social_rank": 99.9999968917598,
+            "publisher_url": "http://www.mybakingaddiction.com"
+        },
+        {
+            "publisher": "Two Peas and Their Pod",
+            "title": "Avocado Pita Pizza with Cilantro Sauce",
+            "source_url": "http://www.twopeasandtheirpod.com/avocado-pita-pizza-with-cilantro-sauce/",
+            "recipe_id": "54388",
+            "image_url": "http://forkify-api.herokuapp.com/images/avocadopizzawithcilantrosauce4bf5.jpg",
+            "social_rank": 99.99999665701256,
+            "publisher_url": "http://www.twopeasandtheirpod.com"
+        },
+        {
+            "publisher": "What's Gaby Cooking",
+            "title": "Pizza Monkey Bread",
+            "source_url": "http://whatsgabycooking.com/pizza-monkey-bread/",
+            "recipe_id": "ead4e0",
+            "image_url": "http://forkify-api.herokuapp.com/images/PizzaMonkeyBread67f8.jpg",
+            "social_rank": 99.99999570141472,
+            "publisher_url": "http://whatsgabycooking.com"
+        },
+        {
+            "publisher": "The Pioneer Woman",
+            "title": "Supreme Pizza Burgers",
+            "source_url": "http://thepioneerwoman.com/cooking/2012/10/supreme-pizza-burgers/",
+            "recipe_id": "46892",
+            "image_url": "http://forkify-api.herokuapp.com/images/burger53be.jpg",
+            "social_rank": 99.99999283988569,
+            "publisher_url": "http://thepioneerwoman.com"
+        },
+        {
+            "publisher": "Closet Cooking",
+            "title": "Balsamic Strawberry and Chicken Pizza with Sweet Onions and Smoked Bacon",
+            "source_url": "http://www.closetcooking.com/2012/07/balsamic-strawberry-and-chicken-pizza.html",
+            "recipe_id": "35128",
+            "image_url": "http://forkify-api.herokuapp.com/images/Strawberry2BBalsamic2BPizza2Bwith2BChicken252C2BSweet2BOnion2Band2BSmoked2BBacon2B5002B300939d125e2.jpg",
+            "social_rank": 99.99998682928603,
+            "publisher_url": "http://closetcooking.com"
         }
-    ],
-    "baseUri": "https://spoonacular.com/recipeImages/",
-    "offset": 0,
-    "number": 20,
-    "totalResults": 96,
-    "processingTimeMs": 304,
-    "expires": 1599996112961,
-    "isStale": false
-}
+    ]
+}`);
 
-let foodUrl = new URL("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search");
-
-let foodGetParams = {
-    excludeIngredients: "coconut",
-    intolerances: "egg",
-    number: "20",
-    offset: "0",
-    type: "main course",
-    query: "burger"
-}
+let foodUrl = new URL("https://forkify-api.herokuapp.com/api/search");
 
 let foodReqParams = {
 	method: "GET",
 	headers: {
-		
+		'content-type': 'application/json'
     }
 };
 
-foodUrl.search = new URLSearchParams(foodGetParams);
+const searchRecipes = async (query) => {
+    let foodGetParams = {
+        q: query
+    }
 
-const searchRecipes = async () => {
-    const foodData = apiTestData; //ACTUAL FETCH--->>//await (await fetch(foodUrl, foodReqParams)).json();
+    foodUrl.search = new URLSearchParams(foodGetParams);
+
+    const foodData = apiTestData; //await (await fetch(foodUrl, foodReqParams)).text();
     updateFoodPage(foodData);
 }
 
 const updateFoodPage = (foodData) => {
-    let recipes = foodData.results;
-    console.log("Recipes:", recipes);
-
-    let firstRecipe = recipes[0];
-    console.log("First Recipe:", firstRecipe);
-
-    let firstId = firstRecipe.id;
-    console.log("First ID:", firstId);
-
-    let firstImage = firstRecipe.image;
-    console.log("First Image:", firstImage);
+    foodData.recipes.forEach(recipe => pushRecipe(recipe));
 }
 
-searchRecipes();
+const pushRecipe = (recipe) => {
+    const MAIN = document.querySelector("main .content");
+    let content = MAIN.innerHTML;
+    content += `<div class="recipe">
+                    <img src="${recipe.image_url}" alt="Image pending...">
+
+                    <div class="rec-info">
+                    <h3 class="rec-title">${recipe.title}</h2>
+                </div>
+    
+                </div>`
+
+    MAIN.innerHTML = content;
+}
+
+searchRecipes("pizza");
