@@ -14,7 +14,8 @@ const queryOptions = ["carrot","broccoli","asparagus","cauliflower","corn","cucu
     "bunny chow","pierogi","donuts","rendang","sushi","ice cream","duck","curry","beef","goat","lamb",
     "turkey","pork","fish","crab","bacon","ham","pepperoni","salami","ribs"];
 
-let validQueries = [];
+let matchingQueries = [];
+let queryLength = 0;
 
 
 let foodUrl = new URL("https://forkify-api.herokuapp.com/api/search");
@@ -26,30 +27,40 @@ let foodReqParams = {
     }
 };
 
-const fetchRecipes = async() => {
-    const queries = validQueries;
-    if (queries.length != 0) {
-        const responsePromises = queries.map(query => {
-            let foodGetParams = {
-                q: query
-            }
+const analyzeQueries = () => {
+    clearFoodPage();
 
-            console.log(query);
+    const queries = matchingQueries;
 
-            foodUrl.search = new URLSearchParams(foodGetParams);
+    console.log("Matching:", queries.length);
 
-            return fetch(foodUrl, foodReqParams);  
-        });
-
-        const responses = await Promise.all(responsePromises);
-
-        const resultPromises = responses.map(response => response.json());
-        const results = await Promise.all(resultPromises);
-
-        clearFoodPage();
-        results.forEach(result => appendFoodPage(result));
-        console.log(queries);
+    if ((queries.length != 0) && (queries.length <= 4)) {
+        fetchRecipes();
     }
+}
+
+const fetchRecipes = async() => {
+    const queries = matchingQueries;
+
+    const responsePromises = queries.map(query => {
+        let foodGetParams = {
+            q: query
+        }
+
+        console.log(query);
+
+        foodUrl.search = new URLSearchParams(foodGetParams);
+
+        return fetch(foodUrl, foodReqParams);  
+    });
+
+    const responses = await Promise.all(responsePromises);
+
+    const resultPromises = responses.map(response => response.json());
+    const results = await Promise.all(resultPromises);
+
+    results.forEach(result => appendFoodPage(result));
+    console.log(queries);
 }
 
 const clearFoodPage = () => {
@@ -80,11 +91,15 @@ const testMethod = () => {
 searchBar.addEventListener("keyup", (e) => {
     const searchString = e.target.value;
 
-    validQueries = queryOptions.filter(query => {
+    matchingQueries = queryOptions.filter(query => {
         return query.includes(searchString);
     });
-});
 
-searchBar.addEventListener("keyup", (e) => {
-    setTimeout(fetchRecipes, 2000);
+    let newLength = matchingQueries.length;
+
+    if (newLength != queryLength) {
+        queryLength = newLength;
+
+        analyzeQueries();
+    }
 });
