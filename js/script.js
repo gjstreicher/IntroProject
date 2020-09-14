@@ -14,7 +14,8 @@ const queryOptions = ["carrot","broccoli","asparagus","cauliflower","corn","cucu
     "bunny chow","pierogi","donuts","rendang","sushi","ice cream","duck","curry","beef","goat","lamb",
     "turkey","pork","fish","crab","bacon","ham","pepperoni","salami","ribs"];
 
-let matchingQueries = [];
+let newQueries = [];
+let oldQueries = [];
 let queryLength = 0;
 
 
@@ -30,17 +31,17 @@ let foodReqParams = {
 const analyzeQueries = () => {
     clearFoodPage();
 
-    const queries = matchingQueries;
+    const queries = newQueries;
 
-    console.log("Matching:", queries.length);
+    //console.log("Matching:", queries.length);
 
-    if ((queries.length != 0) && (queries.length <= 4)) {
+    if ((queries.length > 0) && (queries.length <= 4)) {
         fetchRecipes();
     }
 }
 
 const fetchRecipes = async() => {
-    const queries = matchingQueries;
+    const queries = newQueries;
 
     const responsePromises = queries.map(query => {
         let foodGetParams = {
@@ -58,6 +59,8 @@ const fetchRecipes = async() => {
 
     const resultPromises = responses.map(response => response.json());
     const results = await Promise.all(resultPromises);
+
+    clearFoodPage();
 
     results.forEach(result => appendFoodPage(result));
     console.log(queries);
@@ -84,22 +87,19 @@ const pushRecipe = (recipe) => {
     content.innerHTML = contentHTML;
 }
 
-const testMethod = () => {
-    console.log("Test Method Successfully Run");
-}
-
 searchBar.addEventListener("keyup", (e) => {
     const searchString = e.target.value;
 
-    matchingQueries = queryOptions.filter(query => {
+    oldQueries = newQueries;
+
+    newQueries = queryOptions.filter(query => {
         return query.includes(searchString);
     });
 
-    let newLength = matchingQueries.length;
+    let oldJSONQueries = JSON.stringify(oldQueries);
+    let newJSONQueries = JSON.stringify(newQueries);
 
-    if (newLength != queryLength) {
-        queryLength = newLength;
-
+    if (oldJSONQueries !== newJSONQueries) {
         analyzeQueries();
-    }
+    }   
 });
