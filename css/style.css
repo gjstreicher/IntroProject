@@ -1,6 +1,13 @@
 * {
-    font-family: Calibri, sans-serif, serif;
+    
 }
+
+html {
+    margin-left: calc(100vw - 100%);
+    margin-right: 0;
+
+    font-family: Calibri, sans-serif, serif;
+  }
 
 main {
     width: 700px;

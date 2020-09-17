@@ -1,6 +1,7 @@
 const searchBar = document.querySelector("#searchBar");
 const content = document.querySelector("main .content");
-const queryOptions = ["carrot","broccoli","asparagus","cauliflower","corn","cucumber","green pepper","lettuce","mushrooms",
+const queryOptions = [
+    "carrot","broccoli","asparagus","cauliflower","corn","cucumber","green pepper","lettuce","mushrooms",
     "onion","potato","pumpkin","red pepper","tomato","beetroot","brussel sprouts","peas","zucchini",
     "radish","sweet potato","artichoke","leek","cabbage","celery","chili","garlic","basil","coriander",
     "parsley","dill","rosemary","oregano","cinnamon","saffron","green bean","bean","chickpea","lentil",
@@ -12,11 +13,11 @@ const queryOptions = ["carrot","broccoli","asparagus","cauliflower","corn","cucu
     "masala","paella","som tam","chicken","toast","marzipan","tofu","ketchup","hummus","chili",
     "maple syrup","parma ham","fajitas","champ","lasagna","poke","chocolate","croissant","arepas",
     "bunny chow","pierogi","donuts","rendang","sushi","ice cream","duck","curry","beef","goat","lamb",
-    "turkey","pork","fish","crab","bacon","ham","pepperoni","salami","ribs"];
+    "turkey","pork","fish","crab","bacon","ham","pepperoni","salami","ribs"
+];
 
 let newQueries = [];
 let oldQueries = [];
-let queryLength = 0;
 
 
 let foodUrl = new URL("https://forkify-api.herokuapp.com/api/search");
@@ -48,8 +49,7 @@ const fetchRecipes = async() => {
             q: query
         }
 
-        console.log(query);
-
+        //console.log(query);
         foodUrl.search = new URLSearchParams(foodGetParams);
 
         return fetch(foodUrl, foodReqParams);  
@@ -77,7 +77,7 @@ const appendFoodPage = (foodData) => {
 const pushRecipe = (recipe) => {
     let contentHTML = content.innerHTML;
     contentHTML += `<div class="recipe">
-                    <img src="${recipe.image_url}" alt="Image pending...">
+                    <img src="${recipe.image_url}" alt="Image pending..." />
 
                     <div class="rec-info">
                         <h3 class="rec-title">${recipe.title}</h2>
